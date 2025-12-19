@@ -1,0 +1,56 @@
+Populate app/(site)/page.tsx with the complete Vestra Strategies home page including:
+
+**Hero Section:**
+- Headline: "Your Business. Certified. Connected. Growing."
+- Subheadline: "From launching your idea to winning government contracts, Vestra Strategies is your end-to-end partner for certifications, bidding, capital, and AI-powered growth."
+- Two CTA buttons: "Start My Assessment" and "Book a Strategy Call"
+- Trust line: "Trusted by ambitious small businesses across Colorado and the U.S."
+
+**Journey Picker Section:**
+Title: "Where are you in your business journey?"
+
+5 Interactive Cards:
+1. **Ready to start your own business?** 
+   - "Launch the right way: entity setup, compliance, brand, and a credible digital presence in days—not months."
+   - Features: Business registration & EIN, Strategic business plan, Visual identity & website, Essential tools
+   - CTA: "Launch My Business" → /start
+
+2. **Ready to grow your business?**
+   - "Put lead generation on autopilot with AI agents, automated follow-ups, and a clean sales pipeline."
+   - Features: AI lead capture 24/7, SMS/email automations, Review booster, Analytics
+   - CTA: "Grow With AI" → /grow
+
+3. **Ready to certify your business?**
+   - "Qualify for M/WBE, SBE, DBE, EBE, ACDBE and more. We handle the process—documents, submissions, and compliance."
+   - Features: Fast application support, Document checklist & portal, Multi-cert strategy, Renewal reminders
+   - CTA: "Get Certified" → /certify
+
+4. **I'm certified, I need contracts!**
+   - "We help you find, bid, and win. From daily bid scans to proposal writing and submission."
+   - Features: Opportunity sourcing, Proposal strategy, Submission management, Capability statements
+   - CTA: "Win Contracts" → /contracts
+
+5. **I'm looking for extra capital for my business**
+   - "Get capital-ready: improve your profile, package your story, and access smart funding."
+   - Features: Business credit setup, Lender-ready docs, Grants support, Lines of credit
+   - CTA: "Find Funding" → /capital
+
+**Why Vestra Section:**
+- Government & Community insiders
+- Certification specialists  
+- AI-powered growth
+- Bilingual & culturally fluent
+- Execution over theory
+
+**Government & Community Affairs Section:**
+- Led by Christian Jimenez, Kevin Vargas, and Angelica Rodriguez
+- Services: Community outreach, Stakeholder mapping, Multilingual communications, Survey design, Vendor inclusion strategies
+- CTA: "Explore Government & Community Affairs"
+
+**5-Step Process:**
+1. Quick Assessment → 2. Strategy Call → 3. Action Plan & Proposal → 4. Onboarding & Portal Access → 5. Execution & Reporting
+
+**Final CTA Band:**
+- "Start My Assessment" and "Talk to a Strategist" buttons
+
+Use modern design with animations, proper spacing, and the Vestra brand colors. Make it conversion-optimized and mobile responsive.
