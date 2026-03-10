@@ -122,7 +122,7 @@
 
     /* ─── HERO ───────────────────────────────────────────────────────────── */
     #hero {
-      min-height: 100vh;
+      min-height: 85vh;
       position: relative;
       display: flex; align-items: center;
       overflow: hidden;
@@ -260,6 +260,19 @@
     }
     .marquee-item::after { content: '◆'; font-size: 0.4rem; opacity: 0.6; }
     @keyframes marquee { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+
+    /* ─── SUBTLE TEXTURE OVERLAY (shared) ──────────────────────────────── */
+    .has-texture { position: relative; }
+    .has-texture::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .has-texture > * { position: relative; z-index: 1; }
 
     /* ─── SECTION SHARED ─────────────────────────────────────────────────── */
     section { padding: 7rem 0; }
@@ -1108,7 +1121,7 @@
 </div>
 
 <!-- ─── ABOUT ─────────────────────────────────────────────────────────────── -->
-<section id="about">
+<section id="about" class="has-texture">
   <div class="container">
     <div class="about-grid">
       <div class="about-visual reveal">
@@ -1164,7 +1177,7 @@
 </section>
 
 <!-- ─── SERVICES ──────────────────────────────────────────────────────────── -->
-<section id="services">
+<section id="services" class="has-texture">
   <div class="container">
     <div class="section-header-row reveal">
       <div>
@@ -1332,7 +1345,7 @@
 </section>
 
 <!-- ─── APPROACH ──────────────────────────────────────────────────────────── -->
-<section id="approach">
+<section id="approach" class="has-texture">
   <div class="container">
     <div class="approach-layout">
       <div>
@@ -1391,7 +1404,7 @@
 </section>
 
 <!-- ─── TEAM ───────────────────────────────────────────────────────────────── -->
-<section id="team">
+<section id="team" class="has-texture">
   <div class="container">
     <div class="section-header reveal">
       <div class="tag">Our People</div>
@@ -1464,7 +1477,7 @@
 </section>
 
 <!-- ─── WHY VESTRA ─────────────────────────────────────────────────────────── -->
-<section id="why">
+<section id="why" class="has-texture">
   <div class="container">
     <div class="why-grid">
       <div>
@@ -1533,7 +1546,7 @@
 </section>
 
 <!-- ─── CONTACT ────────────────────────────────────────────────────────────── -->
-<section id="contact">
+<section id="contact" class="has-texture">
   <div class="container">
     <div class="contact-layout">
       <div class="reveal">
@@ -1574,19 +1587,20 @@
       </div>
       <div class="contact-form reveal reveal-delay-1">
         <div class="tag" style="margin-bottom:1.5rem;">Send a Message</div>
-        <!-- 
-          FORMSPREE SETUP (5 min, free):
-          1. Go to https://formspree.io and create a free account
-          2. Click "New Form" → name it "Vestra Contact"
-          3. Copy the form endpoint (looks like https://formspree.io/f/xyzabc12)
-          4. Replace YOUR_FORMSPREE_ID below with just the ID part (e.g. xyzabc12)
-          Formspree will email every submission to main@vestrastrategies.com
+        <!--
+          FormSubmit.co — sends submissions to main@vestrastrategies.com
+          with a CC to christian@vestrastrategies.com.
+          On first submission, FormSubmit will send a confirmation email
+          to main@vestrastrategies.com — click the link to activate.
         -->
-        <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
-          <!-- hidden fields so Formspree knows where to send -->
+        <form id="contact-form" action="https://formsubmit.co/main@vestrastrategies.com" method="POST" novalidate>
+          <!-- hidden fields for FormSubmit configuration -->
           <input type="hidden" name="_replyto" id="hidden-email" />
           <input type="hidden" name="_subject" value="New Inquiry — Vestra Strategies Website" />
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="_cc" value="christian@vestrastrategies.com" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
           <div class="form-row">
             <div class="form-group">
@@ -1644,7 +1658,7 @@
 </section>
 
 <!-- ─── FOOTER ────────────────────────────────────────────────────────────── -->
-<footer>
+<footer class="has-texture">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -1908,7 +1922,7 @@
     }, 4000);
   }
 
-  /* ── 12. Formspree contact form ── */
+  /* ── 12. Contact form (FormSubmit.co) ── */
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
