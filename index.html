@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vestra Strategies | Multicultural Community Affairs & Communications</title>
+  <meta name="description" content="Vestra Strategies specializes in multicultural community affairs, communications, and engagement — connecting organizations with the diverse communities they serve across Colorado and beyond." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: #0a1628;
+      color: #e8edf4;
+      overflow-x: hidden;
+    }
+
+    /* ─── CSS VARIABLES ─────────────────────────────────────────────────── */
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #132240;
+      --navy-light: #1c3357;
+      --navy-card: #162035;
+      --red: #e84c2a;
+      --red-dark: #c43a1e;
+      --red-glow: rgba(232, 76, 42, 0.25);
+      --gold: #d4a843;
+      --text: #e8edf4;
+      --text-muted: #8da3bc;
+      --text-dim: #5d7a96;
+      --border: rgba(255,255,255,0.07);
+      --border-red: rgba(232,76,42,0.3);
+    }
+
+    /* ─── SCROLLBAR ──────────────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────────────────────────── */
+    h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.03em; line-height: 1.1; font-weight: 700; }
+    .condensed { font-family: 'Barlow Condensed', sans-serif; }
+
+    /* ─── UTILITY ────────────────────────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--red);
+      background: rgba(232,76,42,0.1); border: 1px solid var(--border-red);
+      padding: 0.3rem 0.75rem; border-radius: 2px;
+    }
+    .tag::before { content: ''; width: 5px; height: 5px; background: var(--red); border-radius: 50%; flex-shrink: 0; }
+    .red { color: var(--red); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.85rem 2rem; border-radius: 3px;
+      cursor: pointer; transition: all 0.25s ease; border: none;
+    }
+    .btn-primary {
+      background: var(--red); color: #fff;
+    }
+    .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 30px var(--red-glow); }
+    .btn-outline {
+      background: transparent; color: var(--text);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .btn-outline:hover { border-color: var(--red); color: var(--red); transform: translateY(-2px); }
+    .btn svg { width: 16px; height: 16px; }
+
+    /* ─── NAV ────────────────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.25rem 0;
+      transition: all 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 0;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo img { height: 42px; width: auto; }
+    .nav-links {
+      display: flex; align-items: center; gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-muted);
+      text-decoration: none; transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 1px; background: var(--red); transform: scaleX(0);
+      transform-origin: left; transition: transform 0.25s ease;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { margin-left: 1rem; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #fff; transition: all 0.3s; }
+
+    /* ─── HERO ───────────────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(28,51,87,0.8) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 20% 80%, rgba(232,76,42,0.08) 0%, transparent 60%),
+                  linear-gradient(180deg, var(--navy) 0%, #0d1f38 100%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .hero-left { animation: fadeUp 1s ease both; }
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 1.75rem;
+    }
+    .hero-eyebrow-line { width: 40px; height: 2px; background: var(--red); }
+    .hero-eyebrow span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--red);
+    }
+    .hero-title {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 800; line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .accent {
+      color: var(--red);
+      position: relative; display: inline-block;
+    }
+    .hero-sub {
+      font-size: 1.1rem; font-weight: 300; line-height: 1.75;
+      color: var(--text-muted); max-width: 500px; margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .hero-stats {
+      display: flex; gap: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .hero-stat-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.8rem; font-weight: 800;
+      color: var(--red); line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.75rem; color: var(--text-dim);
+      letter-spacing: 0.05em; margin-top: 0.25rem;
+    }
+
+    .hero-right {
+      position: relative; animation: fadeUp 1s 0.3s ease both;
+    }
+    .hero-card-stack {
+      position: relative; height: 520px;
+    }
+    .hero-card {
+      position: absolute;
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: transform 0.4s ease;
+    }
+    .hero-card:hover { transform: translateY(-4px) !important; }
+    .hero-card-main {
+      top: 0; left: 0; right: 0;
+      border-top: 3px solid var(--red);
+      background: linear-gradient(145deg, var(--navy-mid), var(--navy-card));
+    }
+    .hero-card-float-1 {
+      bottom: 60px; left: -20px; width: 200px;
+      background: rgba(232,76,42,0.12);
+      border-color: var(--border-red);
+      transform: rotate(-2deg);
+    }
+    .hero-card-float-2 {
+      bottom: 20px; right: -10px; width: 180px;
+      background: rgba(28,51,87,0.9);
+      transform: rotate(1.5deg);
+    }
+    .hc-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 0.75rem;
+    }
+    .hc-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;
+    }
+    .hc-body { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+    .project-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.7rem; font-weight: 600;
+      background: rgba(232,76,42,0.15); color: var(--red);
+      border: 1px solid var(--border-red); border-radius: 100px;
+      padding: 0.25rem 0.65rem; margin-top: 0.75rem;
+    }
+    .project-badge::before { content: ''; width: 5px; height: 5px; background: var(--red); border-radius: 50%; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+    .hc-stat-big {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.2rem; font-weight: 800; color: var(--red);
+    }
+    .hc-stat-sub { font-size: 0.72rem; color: var(--text-muted); line-height: 1.4; }
+
+    /* ─── MARQUEE ────────────────────────────────────────────────────────── */
+    .marquee-bar {
+      background: var(--red);
+      padding: 0.65rem 0;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex; gap: 3rem;
+      animation: marquee 25s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.85);
+      display: flex; align-items: center; gap: 1.5rem; flex-shrink: 0;
+    }
+    .marquee-item::after { content: '◆'; font-size: 0.4rem; opacity: 0.6; }
+    @keyframes marquee { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+
+    /* ─── SECTION SHARED ─────────────────────────────────────────────────── */
+    section { padding: 7rem 0; }
+    .section-header { margin-bottom: 4rem; }
+    .section-header .tag { margin-bottom: 1.25rem; }
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      font-size: 1rem; color: var(--text-muted);
+      max-width: 560px; line-height: 1.75;
+    }
+    .section-header-row {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      gap: 2rem; flex-wrap: wrap;
+    }
+
+    /* ─── ABOUT / INTRO ──────────────────────────────────────────────────── */
+    #about { background: var(--navy-mid); position: relative; overflow: hidden; }
+    #about::before {
+      content: 'VESTRA';
+      position: absolute; right: -2%; top: 50%; transform: translateY(-50%);
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800;
+      font-size: 18vw; color: rgba(255,255,255,0.018);
+      pointer-events: none; line-height: 1; user-select: none;
+    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-visual {
+      position: relative;
+    }
+    .about-img-frame {
+      position: relative; border-radius: 8px; overflow: hidden;
+      background: linear-gradient(135deg, var(--navy-light), var(--navy-card));
+      aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-img-frame .v-mark {
+      width: 60%; opacity: 0.12;
+    }
+    .about-img-frame::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--red) 0%, transparent 100%);
+    }
+    .about-badge {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--red); border-radius: 6px;
+      padding: 1.25rem 1.5rem; text-align: center;
+    }
+    .about-badge-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.2rem; font-weight: 800; line-height: 1; color: #fff;
+    }
+    .about-badge-label {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.8); text-transform: uppercase;
+    }
+    .about-principles {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;
+    }
+    .principle-card {
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 6px; padding: 1.25rem;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .principle-card:hover { border-color: var(--border-red); background: rgba(232,76,42,0.06); }
+    .principle-icon {
+      width: 36px; height: 36px; border-radius: 4px;
+      background: rgba(232,76,42,0.15); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+    .principle-icon svg { width: 18px; height: 18px; color: var(--red); }
+    .principle-name {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .principle-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ─── SERVICES ───────────────────────────────────────────────────────── */
+    #services { background: var(--navy); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
+      background: var(--border);
+      border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+    }
+    .service-card {
+      background: var(--navy-card); padding: 2.25rem;
+      transition: background 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--red); transform: scaleX(0);
+      transform-origin: left; transition: transform 0.3s ease;
+    }
+    .service-card:hover { background: var(--navy-mid); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em;
+      color: var(--text-dim); text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 6px;
+      background: rgba(232,76,42,0.1); border: 1px solid var(--border-red);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .service-icon svg { width: 22px; height: 22px; color: var(--red); }
+    .service-title {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700;
+      margin-bottom: 0.6rem; line-height: 1.3;
+    }
+    .service-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; }
+    .service-card.featured {
+      background: linear-gradient(145deg, rgba(232,76,42,0.12), rgba(28,51,87,0.5));
+      border: none;
+    }
+    .service-card.featured::before { transform: scaleX(1); }
+
+    /* ─── PROJECTS ───────────────────────────────────────────────────────── */
+    #projects { background: var(--navy-mid); }
+    .projects-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .project-card {
+      background: var(--navy-card); border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .project-card.large { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; }
+    .project-visual {
+      background: linear-gradient(135deg, var(--navy-light), var(--navy));
+      min-height: 240px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 2rem;
+    }
+    .project-visual.broncos {
+      background: linear-gradient(135deg, #0b2442 0%, #1a3d6b 50%, #0b1e35 100%);
+    }
+    .project-visual.vibrant {
+      background: linear-gradient(135deg, #1a0a04 0%, #3d1a0a 50%, #1a2a10 100%);
+    }
+    .pv-icon {
+      width: 80px; height: 80px; border-radius: 50%;
+      border: 2px solid var(--border-red);
+      background: rgba(232,76,42,0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pv-icon svg { width: 36px; height: 36px; color: var(--red); }
+    .project-visual-label {
+      position: absolute; bottom: 1rem; left: 1rem; right: 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-dim);
+    }
+    .pv-decoration {
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg, transparent 0px, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px);
+    }
+    .project-body { padding: 2rem; }
+    .project-status {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #4ade80; background: rgba(74,222,128,0.1);
+      border: 1px solid rgba(74,222,128,0.25); border-radius: 100px;
+      padding: 0.25rem 0.65rem; margin-bottom: 1rem;
+    }
+    .project-status::before { content: ''; width: 5px; height: 5px; background: #4ade80; border-radius: 50%; animation: pulse 1.5s infinite; }
+    .project-name {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 800;
+      margin-bottom: 0.75rem; line-height: 1.2;
+    }
+    .project-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .ptag {
+      font-size: 0.7rem; font-weight: 500; color: var(--text-dim);
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      padding: 0.2rem 0.6rem; border-radius: 3px;
+    }
+
+    /* ─── IMPACT ─────────────────────────────────────────────────────────── */
+    #impact { background: var(--red); overflow: hidden; position: relative; padding: 5rem 0; }
+    #impact::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 50%, #e86040 100%);
+    }
+    #impact::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg, transparent 0px, transparent 30px, rgba(0,0,0,0.04) 30px, rgba(0,0,0,0.04) 31px);
+    }
+    .impact-inner { position: relative; z-index: 1; }
+    .impact-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: center; }
+    .impact-heading { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; color: #fff; line-height: 1.1; }
+    .impact-heading span { color: rgba(255,255,255,0.5); }
+    .impact-sub { font-size: 1rem; color: rgba(255,255,255,0.7); margin-top: 1rem; line-height: 1.7; }
+    .impact-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .impact-stat {
+      background: rgba(0,0,0,0.15); border-radius: 6px; padding: 2rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    .impact-stat-num {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.8rem; font-weight: 800;
+      color: #fff; line-height: 1;
+    }
+    .impact-stat-label {
+      font-size: 0.78rem; color: rgba(255,255,255,0.65);
+      margin-top: 0.5rem; line-height: 1.4;
+    }
+
+    /* ─── TEAM ───────────────────────────────────────────────────────────── */
+    #team { background: var(--navy); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .team-card {
+      background: var(--navy-card); border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .team-card:hover { transform: translateY(-5px); border-color: var(--border-red); }
+    .team-photo {
+      width: 100%; aspect-ratio: 1/1;
+      background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+      display: flex; align-items: flex-end; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .team-initials {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 4rem; font-weight: 800;
+      color: rgba(255,255,255,0.08); position: absolute;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      line-height: 1; user-select: none;
+    }
+    .team-photo-accent {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+      background: var(--red);
+    }
+    .team-body { padding: 1.75rem; }
+    .team-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .team-role {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 1rem;
+    }
+    .team-bio { font-size: 0.81rem; color: var(--text-muted); line-height: 1.65; }
+    .team-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
+    .team-pill {
+      font-size: 0.67rem; font-weight: 500;
+      background: rgba(255,255,255,0.05); color: var(--text-dim);
+      border: 1px solid var(--border); border-radius: 100px;
+      padding: 0.2rem 0.55rem;
+    }
+
+    /* ─── APPROACH ───────────────────────────────────────────────────────── */
+    #approach { background: var(--navy-mid); }
+    .approach-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .approach-steps { display: flex; flex-direction: column; gap: 0; }
+    .approach-step {
+      display: grid; grid-template-columns: 60px 1fr; gap: 1.5rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .approach-step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.5rem; font-weight: 800;
+      color: rgba(255,255,255,0.06); line-height: 1;
+      text-align: right; padding-top: 0.1rem;
+    }
+    .step-content {}
+    .step-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .step-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; }
+    .approach-aside {}
+    .approach-feature {
+      background: linear-gradient(145deg, rgba(232,76,42,0.1), rgba(28,51,87,0.3));
+      border: 1px solid var(--border-red);
+      border-radius: 8px; padding: 2.5rem;
+      position: sticky; top: 100px;
+    }
+    .af-quote {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 700;
+      line-height: 1.4; margin-bottom: 1.5rem;
+      position: relative; padding-left: 1.5rem;
+    }
+    .af-quote::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: var(--red); border-radius: 2px;
+    }
+    .af-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .af-list li {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;
+    }
+    .af-list li::before {
+      content: '→';
+      color: var(--red); flex-shrink: 0; margin-top: 0.1rem;
+    }
+
+    /* ─── WHY VESTRA ─────────────────────────────────────────────────────── */
+    #why { background: var(--navy); }
+    .why-grid { display: grid; grid-template-columns: 5fr 4fr; gap: 5rem; align-items: center; }
+    .why-points { display: flex; flex-direction: column; gap: 1.5rem; }
+    .why-point {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      padding: 1.5rem; border-radius: 6px;
+      border: 1px solid transparent;
+      transition: all 0.25s;
+    }
+    .why-point:hover { background: rgba(255,255,255,0.03); border-color: var(--border); }
+    .why-point-icon {
+      width: 44px; height: 44px; flex-shrink: 0; border-radius: 6px;
+      background: rgba(232,76,42,0.1); border: 1px solid var(--border-red);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .why-point-icon svg { width: 20px; height: 20px; color: var(--red); }
+    .why-point-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .why-point-text { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; }
+    .why-cta-box {
+      background: linear-gradient(145deg, var(--navy-mid), var(--navy-card));
+      border: 1px solid var(--border); border-radius: 8px; padding: 2.5rem;
+      text-align: center;
+      border-top: 3px solid var(--red);
+    }
+    .why-cta-box h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; }
+    .why-cta-box p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 2rem; }
+
+    /* ─── CONTACT ────────────────────────────────────────────────────────── */
+    #contact {
+      background: var(--navy-mid);
+      padding-bottom: 0;
+    }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; padding-bottom: 7rem; }
+    .contact-info-title { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .contact-info-sub { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 2.5rem; max-width: 440px; }
+    .contact-details { display: flex; flex-direction: column; gap: 1.25rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .contact-item-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(232,76,42,0.1); border: 1px solid var(--border-red);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    }
+    .contact-item-icon svg { width: 18px; height: 18px; color: var(--red); }
+    .contact-item-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); font-weight: 600; }
+    .contact-item-val { font-size: 0.9rem; color: var(--text); margin-top: 0.15rem; }
+    .contact-item-val a { color: var(--text); text-decoration: none; transition: color 0.2s; }
+    .contact-item-val a:hover { color: var(--red); }
+    .contact-form {
+      background: var(--navy-card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 2.5rem;
+      border-top: 3px solid var(--red);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+    .form-group label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-dim);
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      border-radius: 4px; padding: 0.75rem 1rem;
+      color: var(--text); font-family: 'Barlow', sans-serif; font-size: 0.9rem;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--red); background: rgba(232,76,42,0.05);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select option { background: var(--navy-card); }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────────────── */
+    footer {
+      background: #070f1c;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand {}
+    .footer-logo { height: 36px; margin-bottom: 1.25rem; }
+    .footer-tagline { font-size: 0.83rem; color: var(--text-dim); line-height: 1.65; max-width: 260px; }
+    .footer-col-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 1.25rem;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-links a {
+      font-size: 0.83rem; color: var(--text-muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--red); }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.78rem; color: var(--text-dim); }
+    .footer-copy a { color: var(--red); text-decoration: none; }
+    .footer-social { display: flex; gap: 0.75rem; }
+    .social-link {
+      width: 36px; height: 36px; border-radius: 4px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .social-link:hover { background: var(--red); border-color: var(--red); }
+    .social-link svg { width: 15px; height: 15px; color: var(--text-muted); transition: color 0.2s; }
+    .social-link:hover svg { color: #fff; }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────────────────── */
+
+    /* Hero entrance */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Floating blob in hero bg */
+    @keyframes blobDrift {
+      0%,100% { transform: translate(0,0) scale(1); }
+      33%      { transform: translate(30px,-20px) scale(1.05); }
+      66%      { transform: translate(-20px,15px) scale(0.97); }
+    }
+    .hero-blob {
+      position: absolute; border-radius: 50%; filter: blur(80px);
+      pointer-events: none; will-change: transform;
+      animation: blobDrift 14s ease-in-out infinite;
+    }
+    .hero-blob-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(28,51,87,0.55) 0%, transparent 70%);
+      top: -100px; right: 5%;
+      animation-duration: 14s;
+    }
+    .hero-blob-2 {
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(232,76,42,0.07) 0%, transparent 70%);
+      bottom: 10%; left: 10%;
+      animation-duration: 18s; animation-delay: -5s;
+    }
+
+    /* Animated grid lines on hero */
+    @keyframes gridPulse {
+      0%,100% { opacity: 0.022; }
+      50%      { opacity: 0.045; }
+    }
+    .hero-grid { animation: gridPulse 6s ease-in-out infinite; }
+
+    /* Scroll reveal — four variants */
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.75s cubic-bezier(.16,1,.3,1),
+                  transform 0.75s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.from-left  { transform: translateX(-40px); }
+    .reveal.from-right { transform: translateX(40px); }
+    .reveal.scale-in   { transform: translateY(20px) scale(0.96); }
+    .reveal.visible {
+      opacity: 1 !important;
+      transform: translateY(0) translateX(0) scale(1) !important;
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.45s; }
+
+    /* ── Stat counter pop */
+    @keyframes counterPop {
+      0%   { transform: scale(0.7); opacity: 0; }
+      60%  { transform: scale(1.08); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .stat-pop { animation: counterPop 0.6s cubic-bezier(.34,1.56,.64,1) both; }
+
+    /* ── Shimmer on cards */
+    @keyframes shimmer {
+      0%   { background-position: -400px 0; }
+      100% { background-position: 400px 0; }
+    }
+    .shimmer-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+      background-size: 400px 1px;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    /* ── Typed cursor blink */
+    @keyframes blink {
+      0%,100% { opacity: 1; } 50% { opacity: 0; }
+    }
+    .cursor-blink {
+      display: inline-block; width: 3px; height: 1em;
+      background: var(--red); vertical-align: middle; margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+
+    /* ── Orbit ring on hero cards */
+    @keyframes orbit {
+      from { transform: rotate(0deg) translateX(12px) rotate(0deg); }
+      to   { transform: rotate(360deg) translateX(12px) rotate(-360deg); }
+    }
+
+    /* ── Glowing red accent line draw */
+    @keyframes lineDraw {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    .line-draw {
+      transform-origin: left;
+      animation: lineDraw 1.2s cubic-bezier(.16,1,.3,1) both;
+    }
+
+    /* ── Service card hover lift + glow */
+    .service-card {
+      transition: background 0.3s, transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3), 0 0 0 1px rgba(232,76,42,0.15);
+    }
+
+    /* ── Team card photo zoom */
+    .team-initials { transition: transform 0.5s cubic-bezier(.16,1,.3,1), opacity 0.5s; }
+    .team-card:hover .team-initials { transform: scale(1.12); opacity: 0.15; }
+
+    /* ── Number count-up readiness */
+    .count-target { display: inline-block; }
+
+    /* ── Parallax section divider */
+    .parallax-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--red) 30%, var(--red) 70%, transparent 100%);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 1.2s cubic-bezier(.16,1,.3,1);
+    }
+    .parallax-divider.visible { transform: scaleX(1); }
+
+    /* ── Active project badge pulse ring */
+    @keyframes ringPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+      70%  { box-shadow: 0 0 0 8px rgba(74,222,128,0); }
+      100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+    }
+    .project-status { animation: ringPulse 2.2s ease-out infinite; }
+
+    /* ── Marquee hover pause */
+    .marquee-bar:hover .marquee-track { animation-play-state: paused; }
+
+    /* ── Nav link active indicator */
+    .nav-links a.active { color: #fff; }
+    .nav-links a.active::after { transform: scaleX(1); }
+
+    /* ── Page load stagger for hero children */
+    .hero-left > * { animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) both; }
+    .hero-left .hero-eyebrow  { animation-delay: 0.1s; }
+    .hero-left .hero-title    { animation-delay: 0.25s; }
+    .hero-left .hero-sub      { animation-delay: 0.4s; }
+    .hero-left .hero-actions  { animation-delay: 0.52s; }
+    .hero-left .hero-stats    { animation-delay: 0.65s; }
+    .hero-right               { animation: fadeUp 0.9s 0.5s cubic-bezier(.16,1,.3,1) both; }
+
+    /* ── Approach step hover */
+    .approach-step {
+      transition: background 0.25s, padding-left 0.3s;
+      border-radius: 6px; padding-left: 0;
+    }
+    .approach-step:hover { background: rgba(255,255,255,0.025); padding-left: 0.75rem; }
+
+    /* ── Why point hover */
+    .why-point { transition: background 0.25s, border-color 0.25s, transform 0.3s cubic-bezier(.16,1,.3,1); }
+    .why-point:hover { transform: translateX(6px); }
+
+    /* ── Impact stat number pop on scroll */
+    .impact-stat { transition: transform 0.3s cubic-bezier(.16,1,.3,1); }
+    .impact-stat:hover { transform: translateY(-4px) scale(1.02); }
+
+    /* ── Spinner for form loading ── */
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─── RESPONSIVE — COMPREHENSIVE MOBILE OVERHAUL ───────────────────── */
+
+    /* Tablet: 1024px and below */
+    @media (max-width: 1024px) {
+      .container { padding: 0 1.5rem; }
+      .hero-content { grid-template-columns: 1fr; gap: 3rem; padding-top: 2rem; }
+      .hero-right { display: none; }
+      .hero-title { font-size: clamp(2.2rem, 6vw, 3.2rem); }
+      .hero-stats { gap: 1.5rem; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-visual { display: none; }
+      .about-principles { grid-template-columns: 1fr 1fr; }
+
+      .services-grid { grid-template-columns: 1fr 1fr; }
+
+      .projects-layout { grid-template-columns: 1fr; }
+      .project-card.large { grid-column: span 1; grid-template-columns: 1fr; }
+      .project-visual { min-height: 180px; }
+
+      .impact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .impact-stats { grid-template-columns: repeat(3, 1fr); }
+
+      .team-grid { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+      .approach-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .approach-feature { position: static; }
+
+      .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .why-cta-box { max-width: 480px; margin: 0 auto; }
+
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .impact-stats { grid-template-columns: 1fr 1fr 1fr; }
+
+      .section-header-row { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* Large Mobile: 768px and below */
+    @media (max-width: 768px) {
+      html { font-size: 15px; }
+      section { padding: 4rem 0; }
+      .container { padding: 0 1.25rem; }
+
+      /* Nav */
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .nav-logo img { height: 34px; }
+
+      /* Hero */
+      #hero { padding-top: 70px; min-height: auto; padding-bottom: 4rem; }
+      .hero-title { font-size: clamp(1.9rem, 7vw, 2.6rem); }
+      .hero-sub { font-size: 0.95rem; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      .hero-stats { gap: 1.25rem; }
+      .hero-stat-num { font-size: 1.5rem; }
+      .hero-eyebrow { margin-bottom: 1.25rem; }
+
+      /* Marquee */
+      .marquee-item { font-size: 0.68rem; }
+
+      /* About */
+      .about-principles { grid-template-columns: 1fr; gap: 0.75rem; }
+      .section-title { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 1.75rem 1.5rem; }
+
+      /* Projects */
+      .project-card.large { display: block; }
+      .project-visual { min-height: 160px; }
+      .project-body { padding: 1.5rem; }
+      .project-name { font-size: 1.1rem; }
+
+      /* Impact */
+      .impact-stats { grid-template-columns: 1fr; gap: 1rem; }
+      .impact-heading { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+      .impact-stat-num { font-size: 2.2rem; }
+
+      /* Team */
+      .team-grid { grid-template-columns: 1fr; }
+      .team-photo { aspect-ratio: 16/9; }
+
+      /* Approach */
+      .approach-step { grid-template-columns: 40px 1fr; gap: 1rem; }
+      .step-num { font-size: 1.8rem; }
+
+      /* Why */
+      .why-point { padding: 1rem; }
+      .why-cta-box { padding: 1.75rem; }
+
+      /* Contact */
+      .contact-layout { padding-bottom: 4rem; }
+      .contact-info-title { font-size: 1.75rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 1.75rem; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 0.75rem; }
+      .footer-brand { text-align: center; }
+      .footer-logo { margin: 0 auto 1rem; display: block; }
+      .footer-tagline { max-width: 100%; }
+    }
+
+    /* Small Mobile: 480px and below */
+    @media (max-width: 480px) {
+      .container { padding: 0 1rem; }
+      .hero-title { font-size: clamp(1.7rem, 8vw, 2.2rem); }
+      .hero-eyebrow span { font-size: 0.62rem; }
+      .btn { padding: 0.75rem 1.5rem; font-size: 0.78rem; }
+      .tag { font-size: 0.62rem; }
+      .hero-stats { flex-wrap: wrap; gap: 1rem; }
+      .hero-stats > div { flex: 1; min-width: 80px; }
+      .section-title { font-size: clamp(1.5rem, 7vw, 2rem); }
+      .section-sub { font-size: 0.88rem; }
+      .impact-stat { padding: 1.5rem 1rem; }
+      .service-icon { width: 40px; height: 40px; }
+      .service-icon svg { width: 18px; height: 18px; }
+      .contact-form { padding: 1.25rem; }
+      .form-group input, .form-group textarea, .form-group select { font-size: 16px; /* prevent iOS zoom */ }
+      .footer-social { justify-content: center; }
+      .project-tags { gap: 0.35rem; }
+      .ptag { font-size: 0.65rem; }
+    }
+
+    /* Touch device enhancements */
+    @media (hover: none) {
+      .service-card:hover { transform: none; box-shadow: none; }
+      .project-card:hover { transform: none; box-shadow: none; }
+      .team-card:hover { transform: none; }
+      .why-point:hover { transform: none; }
+      .btn:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero">
+      <img src="vestra-logo-horizontal.png" alt="Vestra Strategies" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary nav-cta">Get In Touch</a>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>Denver, Colorado — Est. 2023</span>
+      </div>
+      <h1 class="hero-title">
+        Bridging Communities<br/>
+        <span class="accent">Building Trust</span><br/>
+        Driving Results
+      </h1>
+      <p class="hero-sub">
+        Vestra Strategies specializes in multicultural community affairs and communications — connecting organizations with the diverse, vibrant communities they serve across Colorado and beyond.
+      </p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Explore Our Services
+        </a>
+        <a href="#projects" class="btn btn-outline">Active Projects</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num count-target" data-count="15" data-suffix="+">0+</div>
+          <div class="hero-stat-label">Years Combined<br>Experience</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">2</div>
+          <div class="hero-stat-label">Languages<br>Served</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Community<br>Centered</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card-stack">
+        <div class="hero-card hero-card-main">
+          <div class="hc-label">Active Engagement</div>
+          <div class="hc-title">Vibrant Bond Community Strategy</div>
+          <div class="hc-body">Leading inclusive community engagement for Denver's landmark municipal bond initiative — ensuring every neighborhood has a voice in shaping the city's future.</div>
+          <div class="project-badge">Live Project</div>
+        </div>
+        <div class="hero-card hero-card-float-1">
+          <div class="hc-label">New Project</div>
+          <div class="hc-title">Denver Broncos Stadium</div>
+          <div class="hc-body" style="font-size:0.75rem;">Community engagement strategy for the new stadium development.</div>
+          <div class="project-badge">Active</div>
+        </div>
+        <div class="hero-card hero-card-float-2">
+          <div class="hc-stat-big">15+</div>
+          <div class="hc-stat-sub">Community<br>Partnerships Built</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MARQUEE ───────────────────────────────────────────────────────────── -->
+<div class="marquee-bar">
+  <div class="marquee-track" id="marquee-track">
+    <span class="marquee-item">Community Engagement</span>
+    <span class="marquee-item">Multicultural Outreach</span>
+    <span class="marquee-item">Multilingual Communications</span>
+    <span class="marquee-item">Cultural Competency</span>
+    <span class="marquee-item">Public Engagement Strategy</span>
+    <span class="marquee-item">Denver Broncos Stadium</span>
+    <span class="marquee-item">Vibrant Bond Initiative</span>
+    <span class="marquee-item">Stakeholder Relations</span>
+    <span class="marquee-item">Strategic Communications</span>
+    <span class="marquee-item">Community Engagement</span>
+    <span class="marquee-item">Multicultural Outreach</span>
+    <span class="marquee-item">Multilingual Communications</span>
+    <span class="marquee-item">Cultural Competency</span>
+    <span class="marquee-item">Public Engagement Strategy</span>
+    <span class="marquee-item">Denver Broncos Stadium</span>
+    <span class="marquee-item">Vibrant Bond Initiative</span>
+    <span class="marquee-item">Stakeholder Relations</span>
+    <span class="marquee-item">Strategic Communications</span>
+  </div>
+</div>
+
+<!-- ─── ABOUT ─────────────────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img-frame">
+          <img src="vestra-logo-stacked.png" alt="Vestra" class="v-mark" style="width:55%;opacity:0.2;" />
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-num">Denver</div>
+          <div class="about-badge-label">Colorado Based</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-header reveal">
+          <div class="tag">Who We Are</div>
+          <h2 class="section-title">More Than Outreach.<br/>Real Relationships.</h2>
+          <p class="section-sub">
+            At Vestra, we specialize in helping organizations connect authentically with the diverse communities they serve. Effective engagement requires more than translation — it requires cultural awareness, trusted relationships, and communication strategies rooted in lived experience.
+          </p>
+        </div>
+        <div class="about-principles reveal reveal-delay-1">
+          <div class="principle-card">
+            <div class="principle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="principle-name">Accessibility</div>
+            <div class="principle-desc">Communication strategies that reach residents across languages, cultures, and neighborhoods.</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="principle-name">Cultural Competency</div>
+            <div class="principle-desc">Deep understanding of cultural context, values, and community dynamics that shape engagement.</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+            </div>
+            <div class="principle-name">Collaboration</div>
+            <div class="principle-desc">Working with community leaders, government agencies, and nonprofit partners as true allies.</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="principle-name">Measurable Impact</div>
+            <div class="principle-desc">Strategies that don't just check boxes — they increase participation and build lasting trust.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ──────────────────────────────────────────────────────────── -->
+<section id="services">
+  <div class="container">
+    <div class="section-header-row reveal">
+      <div>
+        <div class="tag">What We Do</div>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-sub">Comprehensive community affairs and communications services designed for the diverse communities of today.</p>
+      </div>
+      <a href="#contact" class="btn btn-outline">Work With Us</a>
+    </div>
+    <div class="services-grid reveal reveal-delay-1">
+      <div class="service-card featured">
+        <div class="service-num">01</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="service-title">Community Engagement Strategy</div>
+        <div class="service-desc">We design comprehensive engagement strategies that reach diverse communities and gather meaningful feedback. Outreach plans incorporate culturally responsive tactics, targeted messaging, and accessible participation opportunities.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="service-title">Multilingual Communications</div>
+        <div class="service-desc">Language access is essential for equitable engagement. We provide translation, interpretation, and multilingual communication strategies ensuring information reaches residents across languages and cultures.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </div>
+        <div class="service-title">Community Partnerships & Relationship Building</div>
+        <div class="service-desc">Strong engagement relies on trusted relationships. We work with community organizations, local leaders, and cultural networks to build partnerships that support authentic engagement and broaden participation.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <div class="service-title">Public Engagement for Programs & Projects</div>
+        <div class="service-desc">We support agencies in engaging communities around infrastructure projects, programs, and policy initiatives — creating opportunities for residents to understand, share input, and stay informed throughout.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div class="service-title">Strategic Communications</div>
+        <div class="service-desc">We develop communication strategies that help organizations clearly communicate goals, timelines, and outcomes — building transparency and trust with the communities they serve.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+        </div>
+        <div class="service-title">Government Relations & Liaison Services</div>
+        <div class="service-desc">Bridging the gap between government agencies and the communities they serve. We navigate politically sensitive environments with discretion, diplomacy, and proven consensus-building expertise.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ──────────────────────────────────────────────────────────── -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag">Featured Work</div>
+      <h2 class="section-title">Active Projects</h2>
+      <p class="section-sub">Vestra is engaged on some of Denver's most significant community initiatives, ensuring diverse voices shape the city's future.</p>
+    </div>
+    <div class="projects-layout">
+      <div class="project-card large reveal">
+        <div class="project-visual vibrant">
+          <div class="pv-decoration"></div>
+          <div class="pv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="project-visual-label">Denver Municipal Initiative</div>
+        </div>
+        <div class="project-body">
+          <div class="project-status">Active Engagement</div>
+          <h3 class="project-name">Vibrant Bond — Community Engagement Strategy & Implementation</h3>
+          <p class="project-desc">Vestra is leading the community engagement strategy for Denver's Vibrant Bond initiative — a landmark investment in Denver's parks, culture, and public infrastructure. Our role is to ensure that residents from every neighborhood, background, and language community have a meaningful voice in how these funds are used. We develop multilingual outreach strategies, facilitate community listening sessions, and build coalitions with trusted community organizations to maximize participation from historically underrepresented communities.</p>
+          <div class="project-tags">
+            <span class="ptag">Municipal Bond Initiative</span>
+            <span class="ptag">Community Engagement</span>
+            <span class="ptag">Multilingual Outreach</span>
+            <span class="ptag">Denver</span>
+            <span class="ptag">Public Infrastructure</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-visual broncos">
+          <div class="pv-decoration"></div>
+          <div class="pv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="project-visual-label">Stadium Development</div>
+        </div>
+        <div class="project-body">
+          <div class="project-status">Active Engagement</div>
+          <h3 class="project-name">Denver Broncos New Stadium — Community Engagement</h3>
+          <p class="project-desc">Vestra has been engaged to develop and lead the community engagement strategy for the new Denver Broncos stadium project. We are working to ensure that surrounding neighborhoods and diverse community stakeholders are meaningfully included in the planning process — particularly communities of color and immigrant populations most directly impacted by the development.</p>
+          <div class="project-tags">
+            <span class="ptag">Stadium Development</span>
+            <span class="ptag">Denver Broncos</span>
+            <span class="ptag">Neighborhood Engagement</span>
+            <span class="ptag">Public Process</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-visual" style="background: linear-gradient(135deg, #0a1a0f 0%, #1a3520 100%);">
+          <div class="pv-decoration"></div>
+          <div class="pv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="project-visual-label">Nonprofit & Government Partners</div>
+        </div>
+        <div class="project-body">
+          <div class="project-status" style="color:#60a5fa;background:rgba(96,165,250,0.1);border-color:rgba(96,165,250,0.25);">Ongoing</div>
+          <h3 class="project-name">Multicultural Outreach Programs</h3>
+          <p class="project-desc">Partnering with Denver-area nonprofits and government agencies to design and implement culturally responsive outreach programs. From Latino community networks to multilingual health communications, we help organizations reach beyond traditional engagement channels.</p>
+          <div class="project-tags">
+            <span class="ptag">Nonprofit Partnerships</span>
+            <span class="ptag">Latino Community</span>
+            <span class="ptag">Health Communications</span>
+            <span class="ptag">Civic Engagement</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── IMPACT ────────────────────────────────────────────────────────────── -->
+<section id="impact">
+  <div class="impact-inner">
+    <div class="container">
+      <div class="impact-grid">
+        <div>
+          <h2 class="impact-heading">Our <span>Impact</span> in Numbers</h2>
+          <p class="impact-sub">We measure success not in deliverables, but in the depth of participation, trust built, and communities that feel genuinely heard.</p>
+        </div>
+        <div class="impact-stats">
+          <div class="impact-stat reveal">
+            <div class="impact-stat-num count-target" data-count="15" data-suffix="+">0+</div>
+            <div class="impact-stat-label">Years of Combined Community Leadership in Denver</div>
+          </div>
+          <div class="impact-stat reveal reveal-delay-1">
+            <div class="impact-stat-num count-target" data-count="2">0</div>
+            <div class="impact-stat-label">Languages of Service — English & Spanish</div>
+          </div>
+          <div class="impact-stat reveal reveal-delay-2">
+            <div class="impact-stat-num count-target" data-count="100" data-suffix="+">0+</div>
+            <div class="impact-stat-label">Small Businesses & Community Organizations Supported</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── APPROACH ──────────────────────────────────────────────────────────── -->
+<section id="approach">
+  <div class="container">
+    <div class="approach-layout">
+      <div>
+        <div class="section-header reveal">
+          <div class="tag">How We Work</div>
+          <h2 class="section-title">Our Approach</h2>
+        </div>
+        <div class="approach-steps">
+          <div class="approach-step reveal">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <div class="step-title">Listen First</div>
+              <div class="step-desc">We begin every engagement by listening — to community members, organizational partners, and existing data. Understanding the landscape before designing any strategy is non-negotiable.</div>
+            </div>
+          </div>
+          <div class="approach-step reveal reveal-delay-1">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <div class="step-title">Meet People Where They Are</div>
+              <div class="step-desc">Both geographically and culturally. We combine digital engagement, in-person community presence, and deep partnerships with trusted local organizations to expand participation.</div>
+            </div>
+          </div>
+          <div class="approach-step reveal reveal-delay-2">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <div class="step-title">Design for Equity</div>
+              <div class="step-desc">Every strategy we design prioritizes historically underrepresented communities. We don't just invite people to the table — we ensure the table is accessible, welcoming, and built for them.</div>
+            </div>
+          </div>
+          <div class="approach-step reveal reveal-delay-3">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <div class="step-title">Build for the Long Term</div>
+              <div class="step-desc">We don't do drive-by engagement. Our work is designed to build lasting relationships and sustainable community trust that extends well beyond any single project or initiative.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="approach-aside reveal reveal-delay-2">
+        <div class="approach-feature">
+          <div class="af-quote">
+            "Effective engagement requires more than translation or outreach — it requires cultural awareness, trusted relationships, and communication strategies that reflect the lived experiences of the communities involved."
+          </div>
+          <ul class="af-list">
+            <li>Culturally responsive communication strategies</li>
+            <li>Multilingual outreach and interpretation services</li>
+            <li>Community relationship building with trusted local organizations</li>
+            <li>Inclusive public engagement processes designed for accessibility</li>
+            <li>Equitable access to information and resources</li>
+            <li>Strategic communications that build long-term transparency</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TEAM ───────────────────────────────────────────────────────────────── -->
+<section id="team">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag">Our People</div>
+      <h2 class="section-title">Key Personnel</h2>
+      <p class="section-sub">Our leadership team brings deep community roots, government experience, and entrepreneurial drive to every engagement.</p>
+    </div>
+    <div class="team-grid">
+      <!-- Christian -->
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <div class="team-initials">CJ</div>
+          <div class="team-photo-accent"></div>
+        </div>
+        <div class="team-body">
+          <div class="team-name">Christian Jimenez</div>
+          <div class="team-role">CEO | Multicultural Outreach Lead</div>
+          <div class="team-bio">
+            A seasoned entrepreneur and community leader with deep expertise building trust across Denver's most diverse communities. A proud immigrant and founder of four successful businesses, Christian served as Director of Community Outreach for the Mayor of Denver — bridging city government and historically underrepresented communities. He brings both entrepreneurial insight and lived resilience to every project.
+          </div>
+          <div class="team-pills">
+            <span class="team-pill">City of Denver</span>
+            <span class="team-pill">Latino Community</span>
+            <span class="team-pill">Civic Engagement</span>
+            <span class="team-pill">4x Founder</span>
+          </div>
+        </div>
+      </div>
+      <!-- Jesus -->
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-photo" style="background: linear-gradient(135deg, #1a1040, #2d1e5e);">
+          <div class="team-initials">JS</div>
+          <div class="team-photo-accent"></div>
+        </div>
+        <div class="team-body">
+          <div class="team-name">Jesús Ramón Sánchez</div>
+          <div class="team-role">COO | Multicultural Communications Lead</div>
+          <div class="team-bio">
+            A Colorado entrepreneur with 15+ years of hands-on experience across media, marketing, finance, and real estate. A Denver resident for over 20 years, Jesús launched a locally focused sports media company broadcasting on ESPN Deportes Radio, served as GM for Denver print businesses, and co-led a small-business financial firm. At Vestra, he oversees operations, technology, and community connections.
+          </div>
+          <div class="team-pills">
+            <span class="team-pill">Media & Communications</span>
+            <span class="team-pill">Small Business</span>
+            <span class="team-pill">20+ Yrs Denver</span>
+            <span class="team-pill">Ops & Technology</span>
+          </div>
+        </div>
+      </div>
+      <!-- Angelica -->
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-photo" style="background: linear-gradient(135deg, #1a0a20, #3d1a4a);">
+          <div class="team-initials">AR</div>
+          <div class="team-photo-accent"></div>
+        </div>
+        <div class="team-body">
+          <div class="team-name">Angelica Rodriguez</div>
+          <div class="team-role">CBDO | Senior Associate</div>
+          <div class="team-bio">
+            A dynamic leader with 15+ years spanning government, nonprofit, and business sectors. Fluent in English and Spanish, Angelica previously served as a Mayor's Ambassador for the City and County of Denver, representing the Mayor's Office at public forums and managing sensitive political projects. Her expertise spans multicultural outreach, media relations, and renewable energy consulting.
+          </div>
+          <div class="team-pills">
+            <span class="team-pill">Mayor's Ambassador</span>
+            <span class="team-pill">Bilingual</span>
+            <span class="team-pill">Business Development</span>
+            <span class="team-pill">Government Relations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY VESTRA ─────────────────────────────────────────────────────────── -->
+<section id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <div class="section-header reveal">
+          <div class="tag">Why Choose Us</div>
+          <h2 class="section-title">Why Vestra</h2>
+        </div>
+        <div class="why-points">
+          <div class="why-point reveal">
+            <div class="why-point-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div>
+              <div class="why-point-title">Community-First DNA</div>
+              <div class="why-point-text">Our team doesn't just work in communities — we are community. Our leadership lives, votes, and invests in the neighborhoods we serve. That authenticity creates trust that no external consultant can replicate.</div>
+            </div>
+          </div>
+          <div class="why-point reveal reveal-delay-1">
+            <div class="why-point-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <div class="why-point-title">Proven Government Experience</div>
+              <div class="why-point-text">Our principals have served in City of Denver leadership roles — we understand how government works from the inside, how to navigate politically sensitive processes, and how to build durable public-private partnerships.</div>
+            </div>
+          </div>
+          <div class="why-point reveal reveal-delay-2">
+            <div class="why-point-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+            </div>
+            <div>
+              <div class="why-point-title">Multilingual & Multicultural Reach</div>
+              <div class="why-point-text">We don't just translate — we communicate across cultures. With Spanish-language fluency and deep roots in Latino, immigrant, and underrepresented communities, we reach the residents others miss.</div>
+            </div>
+          </div>
+          <div class="why-point reveal reveal-delay-3">
+            <div class="why-point-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="why-point-title">Strategic Outcomes, Not Just Activity</div>
+              <div class="why-point-text">We integrate communications strategy with community partnerships to deliver outreach efforts that are not only effective, but respectful, inclusive, and sustainable beyond the contract period.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="why-cta-box">
+          <img src="vestra-logo-stacked.png" alt="Vestra Strategies" style="height:80px;margin-bottom:1.5rem;opacity:0.9;" />
+          <h3>Ready to Build Something Meaningful?</h3>
+          <p>Whether you're a government agency, nonprofit, or private organization, we'd love to discuss how Vestra can help you connect authentically with the communities you serve.</p>
+          <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">
+            Start a Conversation
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div style="margin-top:1.25rem;display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+            <span class="ptag">Government Agencies</span>
+            <span class="ptag">Nonprofits</span>
+            <span class="ptag">Infrastructure Projects</span>
+            <span class="ptag">Private Sector</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ────────────────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="reveal">
+        <div class="tag" style="margin-bottom:1.25rem;">Get In Touch</div>
+        <h2 class="contact-info-title">Let's Build<br/>Something Together</h2>
+        <p class="contact-info-sub">
+          Reach out to discuss a project, explore a partnership, or simply learn more about what Vestra can do for your organization and the communities you serve.
+        </p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Location</div>
+              <div class="contact-item-val">Denver, Colorado</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-val"><a href="/cdn-cgi/l/email-protection#3855595156784e5d4b4c4a594b4c4a594c5d5f515d4b165b5755"><span class="__cf_email__" data-cfemail="127f737b7c52647761666073616660736677757b77613c717d7f">[email&#160;protected]</span></a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.07 6.07l1.1-1.1a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-val"><a href="tel:+17202558459">(720) 255-8459</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal reveal-delay-1">
+        <div class="tag" style="margin-bottom:1.5rem;">Send a Message</div>
+        <!-- 
+          FORMSPREE SETUP (5 min, free):
+          1. Go to https://formspree.io and create a free account
+          2. Click "New Form" → name it "Vestra Contact"
+          3. Copy the form endpoint (looks like https://formspree.io/f/xyzabc12)
+          4. Replace YOUR_FORMSPREE_ID below with just the ID part (e.g. xyzabc12)
+          Formspree will email every submission to main@vestrastrategies.com
+        -->
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+          <!-- hidden fields so Formspree knows where to send -->
+          <input type="hidden" name="_replyto" id="hidden-email" />
+          <input type="hidden" name="_subject" value="New Inquiry — Vestra Strategies Website" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name *</label>
+              <input type="text" id="fname" name="first_name" placeholder="First name" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" placeholder="Last name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="you@organization.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(720) 000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="org">Organization</label>
+            <input type="text" id="org" name="organization" placeholder="City of Denver" />
+          </div>
+          <div class="form-group">
+            <label for="service">Service Interest</label>
+            <select id="service" name="service_interest">
+              <option value="">Select a service...</option>
+              <option>Community Engagement Strategy</option>
+              <option>Multilingual Communications</option>
+              <option>Community Partnerships & Relationship Building</option>
+              <option>Public Engagement for Programs & Projects</option>
+              <option>Strategic Communications</option>
+              <option>Government Relations</option>
+              <option>Other / General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project or initiative..." required></textarea>
+          </div>
+
+          <!-- Inline validation messages -->
+          <div id="form-error" style="display:none;color:#f87171;font-size:0.8rem;margin-bottom:0.75rem;padding:0.75rem;background:rgba(248,113,113,0.1);border-radius:4px;border:1px solid rgba(248,113,113,0.3);"></div>
+          <div id="form-success" style="display:none;color:#4ade80;font-size:0.85rem;margin-bottom:0.75rem;padding:1rem;background:rgba(74,222,128,0.1);border-radius:4px;border:1px solid rgba(74,222,128,0.3);text-align:center;"></div>
+
+          <button type="submit" id="submit-btn" class="btn btn-primary" style="width:100%;justify-content:center;">
+            Send Message
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <p style="font-size:0.72rem;color:var(--text-dim);margin-top:1rem;text-align:center;">We typically respond within 1 business day. Your information is never shared.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="vestra-logo-horizontal.png" alt="Vestra Strategies" class="footer-logo" />
+        <p class="footer-tagline">Bridging communities, building trust, and driving results through multicultural engagement and strategic communications in Denver and beyond.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Community Engagement</a></li>
+          <li><a href="#services">Multilingual Communications</a></li>
+          <li><a href="#services">Community Partnerships</a></li>
+          <li><a href="#services">Public Engagement</a></li>
+          <li><a href="#services">Strategic Communications</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Vestra</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#approach">Our Approach</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Active Projects</div>
+        <ul class="footer-links">
+          <li><a href="#projects">Vibrant Bond Initiative</a></li>
+          <li><a href="#projects">Denver Broncos Stadium</a></li>
+          <li><a href="#projects">Multicultural Outreach Programs</a></li>
+        </ul>
+        <div style="margin-top:1.5rem;">
+          <div class="footer-col-title">Follow Us</div>
+          <div class="footer-social">
+            <a class="social-link" href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a class="social-link" href="#" aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a class="social-link" href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Vestra Strategies LLC. All rights reserved. | Denver, Colorado</div>
+      <div class="footer-copy">
+        <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── SCRIPTS ────────────────────────────────────────────────────────────── -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  /* ── 1. Nav scroll ── */
+  const nav = document.getElementById('nav');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 50);
+    // hide nav on fast scroll down, show on scroll up
+    if (y > 200) {
+      nav.style.transform = y > lastY + 5 ? 'translateY(-100%)' : 'translateY(0)';
+    } else {
+      nav.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+    updateActiveNav();
+  });
+  nav.style.transition = 'transform 0.4s ease, background 0.4s ease, padding 0.4s ease, border 0.4s ease';
+
+  /* ── 2. Active nav highlight ── */
+  function updateActiveNav() {
+    const sections = ['hero','about','services','projects','team','approach','why','contact'];
+    const navLinks = document.querySelectorAll('.nav-links a');
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 120) current = id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  /* ── 3. Scroll reveal with IntersectionObserver ── */
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // trigger count-up if inside
+        entry.target.querySelectorAll('[data-count]').forEach(startCount);
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // Parallax dividers
+  const dividerObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => e.target.classList.toggle('visible', e.isIntersecting));
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.parallax-divider').forEach(el => dividerObs.observe(el));
+
+  /* ── 4. Count-up numbers ── */
+  function startCount(el) {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    const duration = 1800;
+    const start = performance.now();
+    const isDecimal = String(target).includes('.');
+    function step(now) {
+      const p = Math.min((now - start) / duration, 1);
+      // ease out cubic
+      const ease = 1 - Math.pow(1 - p, 3);
+      const val = target * ease;
+      el.textContent = prefix + (isDecimal ? val.toFixed(1) : Math.floor(val)) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = prefix + target + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  // Also fire on impact stats visible
+  const countObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('[data-count]').forEach(startCount);
+        countObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.impact-stat, .hero-stat').forEach(el => countObs.observe(el));
+
+  /* ── 5. Smooth anchor scroll ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.offsetTop - 74, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ── 6. Subtle mouse parallax on hero cards ── */
+  const heroRight = document.querySelector('.hero-right');
+  if (heroRight) {
+    document.addEventListener('mousemove', e => {
+      const rx = (e.clientX / window.innerWidth - 0.5) * 12;
+      const ry = (e.clientY / window.innerHeight - 0.5) * -8;
+      heroRight.style.transform = `perspective(1000px) rotateY(${rx * 0.4}deg) rotateX(${ry * 0.4}deg)`;
+    });
+    heroRight.style.transition = 'transform 0.1s ease-out';
+  }
+
+  /* ── 7. Hero card stack stagger ── */
+  const heroCards = document.querySelectorAll('.hero-card');
+  heroCards.forEach((card, i) => {
+    card.style.animation = `fadeUp 0.8s ${0.7 + i * 0.18}s cubic-bezier(.16,1,.3,1) both`;
+  });
+
+  /* ── 8. Service cards stagger on scroll ── */
+  const serviceObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const cards = e.target.querySelectorAll('.service-card');
+        cards.forEach((card, i) => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(28px)';
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s cubic-bezier(.16,1,.3,1), background 0.3s, box-shadow 0.35s';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, i * 90);
+        });
+        serviceObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  const sGrid = document.querySelector('.services-grid');
+  if (sGrid) serviceObs.observe(sGrid);
+
+  /* ── 9. Project cards stagger ── */
+  const projectObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const cards = e.target.querySelectorAll('.project-card');
+        cards.forEach((card, i) => {
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.65s ease, transform 0.65s cubic-bezier(.16,1,.3,1), box-shadow 0.3s';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, i * 120);
+        });
+        projectObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  const pLayout = document.querySelector('.projects-layout');
+  if (pLayout) {
+    pLayout.querySelectorAll('.project-card').forEach(c => {
+      c.style.opacity = '0'; c.style.transform = 'translateY(30px)';
+    });
+    projectObs.observe(pLayout);
+  }
+
+  /* ── 10. Team cards fan-in ── */
+  const teamObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.team-card').forEach((card, i) => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(24px) scale(0.97)';
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.7s ease, transform 0.7s cubic-bezier(.16,1,.3,1), border-color 0.3s';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+          }, 100 + i * 130);
+        });
+        teamObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  const tGrid = document.querySelector('.team-grid');
+  if (tGrid) teamObs.observe(tGrid);
+
+  /* ── 11. Typed hero subtitle effect (subtle) ── */
+  const heroSub = document.querySelector('.hero-sub');
+  if (heroSub) {
+    const original = heroSub.textContent.trim();
+    // just add cursor blink at end for effect
+    heroSub.innerHTML = original + ' <span class="cursor-blink"></span>';
+    // remove cursor after 4s
+    setTimeout(() => {
+      const cursor = heroSub.querySelector('.cursor-blink');
+      if (cursor) { cursor.style.transition = 'opacity 0.5s'; cursor.style.opacity = '0'; setTimeout(() => cursor.remove(), 600); }
+    }, 4000);
+  }
+
+  /* ── 12. Formspree contact form ── */
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const errorBox = document.getElementById('form-error');
+      const successBox = document.getElementById('form-success');
+      const fname = document.getElementById('fname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // Clear previous messages
+      errorBox.style.display = 'none';
+      successBox.style.display = 'none';
+
+      // Client-side validation
+      if (!fname) { errorBox.textContent = 'Please enter your first name.'; errorBox.style.display = 'block'; return; }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errorBox.textContent = 'Please enter a valid email address.'; errorBox.style.display = 'block'; return; }
+      if (!message) { errorBox.textContent = 'Please include a message.'; errorBox.style.display = 'block'; return; }
+
+      // Sync hidden reply-to field
+      document.getElementById('hidden-email').value = email;
+
+      // Loading state
+      btn.disabled = true;
+      btn.innerHTML = '<svg style="width:16px;height:16px;animation:spin 0.8s linear infinite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending...';
+
+      try {
+        const data = new FormData(contactForm);
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          successBox.innerHTML = '✓ Your message has been sent! We\'ll be in touch within 1 business day.';
+          successBox.style.display = 'block';
+          contactForm.reset();
+          btn.innerHTML = '✓ Message Sent';
+          btn.style.background = '#22c55e';
+          setTimeout(() => {
+            btn.innerHTML = 'Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+            btn.style.background = ''; btn.disabled = false;
+          }, 4000);
+        } else {
+          const json = await response.json();
+          errorBox.textContent = json.errors ? json.errors.map(e => e.message).join(', ') : 'Something went wrong. Please email us directly at main@vestrastrategies.com';
+          errorBox.style.display = 'block';
+          resetBtn(btn);
+        }
+      } catch (err) {
+        errorBox.textContent = 'Network error. Please email us directly at main@vestrastrategies.com';
+        errorBox.style.display = 'block';
+        resetBtn(btn);
+      }
+    });
+  }
+  function resetBtn(btn) {
+    btn.disabled = false;
+    btn.innerHTML = 'Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+  }
+
+  /* ── 13. Hamburger mobile menu ── */
+  const hamburger = document.getElementById('hamburger');
+  let menuOpen = false;
+  hamburger.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    const navLinks = document.querySelector('.nav-links');
+    const spans = hamburger.querySelectorAll('span');
+    if (menuOpen) {
+      navLinks.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:66px;left:0;right:0;background:rgba(10,22,40,0.98);padding:2rem;gap:1.5rem;backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.07);z-index:99;animation:fadeUp 0.3s ease both;';
+      spans[0].style.cssText = 'transform:rotate(45deg) translate(5px,5px)';
+      spans[1].style.cssText = 'opacity:0;transform:scaleX(0)';
+      spans[2].style.cssText = 'transform:rotate(-45deg) translate(5px,-5px)';
+    } else {
+      navLinks.style.cssText = '';
+      spans.forEach(s => s.style.cssText = '');
+    }
+    // Close menu when a nav link is tapped on mobile
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menuOpen = false;
+        navLinks.style.cssText = '';
+        spans.forEach(s => s.style.cssText = '');
+      });
+    });
+  });
+
+  /* ── 14. Scroll progress bar ── */
+  const progress = document.createElement('div');
+  progress.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:var(--red);z-index:200;transition:width 0.1s linear;wid
