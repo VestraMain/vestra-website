@@ -92,7 +92,12 @@
       max-width: 1200px; margin: 0 auto; padding: 0 2rem;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .nav-logo img { height: 42px; width: auto; }
+    .nav-logo img { 
+      height: 42px; width: auto;
+      filter: brightness(0) invert(1);
+      transition: opacity 0.2s;
+    }
+    .nav-logo img:hover { opacity: 0.85; }
     .nav-links {
       display: flex; align-items: center; gap: 2.5rem;
       list-style: none;
@@ -642,7 +647,11 @@
       margin-bottom: 3rem;
     }
     .footer-brand {}
-    .footer-logo { height: 36px; margin-bottom: 1.25rem; }
+    .footer-logo { 
+      height: 36px; margin-bottom: 1.25rem;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
     .footer-tagline { font-size: 0.83rem; color: var(--text-dim); line-height: 1.65; max-width: 260px; }
     .footer-col-title {
       font-family: 'Barlow Condensed', sans-serif;
@@ -992,7 +1001,7 @@
 <nav id="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="#hero">
-      <img src="vestra-logo-horizontal.png" alt="Vestra Strategies" />
+      <img src="/vestra-logo-horizontal.png" alt="Vestra Strategies" />
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -1104,7 +1113,7 @@
     <div class="about-grid">
       <div class="about-visual reveal">
         <div class="about-img-frame">
-          <img src="vestra-logo-stacked.png" alt="Vestra" class="v-mark" style="width:55%;opacity:0.2;" />
+          <img src="/vestra-logo-stacked.png" alt="Vestra" class="v-mark" style="width:55%;opacity:0.2;" />
         </div>
         <div class="about-badge">
           <div class="about-badge-num">Denver</div>
@@ -1504,7 +1513,7 @@
       </div>
       <div class="reveal reveal-delay-2">
         <div class="why-cta-box">
-          <img src="vestra-logo-stacked.png" alt="Vestra Strategies" style="height:80px;margin-bottom:1.5rem;opacity:0.9;" />
+          <img src="/vestra-logo-stacked.png" alt="Vestra Strategies" style="height:80px;margin-bottom:1.5rem;filter:brightness(0) invert(1);opacity:0.85;" />
           <h3>Ready to Build Something Meaningful?</h3>
           <p>Whether you're a government agency, nonprofit, or private organization, we'd love to discuss how Vestra can help you connect authentically with the communities you serve.</p>
           <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">
@@ -1639,7 +1648,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="vestra-logo-horizontal.png" alt="Vestra Strategies" class="footer-logo" />
+        <img src="/vestra-logo-horizontal.png" alt="Vestra Strategies" class="footer-logo" />
         <p class="footer-tagline">Bridging communities, building trust, and driving results through multicultural engagement and strategic communications in Denver and beyond.</p>
       </div>
       <div>
@@ -1748,15 +1757,16 @@
 
   /* ── 4. Count-up numbers ── */
   function startCount(el) {
+    if (el.dataset.counted) return; // prevent double-firing
+    el.dataset.counted = '1';
     const target = parseFloat(el.dataset.count);
     const suffix = el.dataset.suffix || '';
     const prefix = el.dataset.prefix || '';
-    const duration = 1800;
+    const duration = 1600;
     const start = performance.now();
     const isDecimal = String(target).includes('.');
     function step(now) {
       const p = Math.min((now - start) / duration, 1);
-      // ease out cubic
       const ease = 1 - Math.pow(1 - p, 3);
       const val = target * ease;
       el.textContent = prefix + (isDecimal ? val.toFixed(1) : Math.floor(val)) + suffix;
@@ -1765,16 +1775,30 @@
     }
     requestAnimationFrame(step);
   }
-  // Also fire on impact stats visible
+
+  // Fire count-up for ANY element with data-count when it enters viewport
   const countObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
+        // fire on the element itself if it has data-count
+        if (e.target.dataset.count) startCount(e.target);
+        // also fire on any children with data-count
         e.target.querySelectorAll('[data-count]').forEach(startCount);
         countObs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.4 });
-  document.querySelectorAll('.impact-stat, .hero-stat').forEach(el => countObs.observe(el));
+  }, { threshold: 0.2, rootMargin: '0px 0px -20px 0px' });
+
+  // Observe both the stat containers AND individual stat elements
+  document.querySelectorAll('.impact-stat, .hero-stat, [data-count]').forEach(el => countObs.observe(el));
+
+  // Also fire immediately for any stats already visible on load
+  setTimeout(() => {
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && !el.dataset.counted) startCount(el);
+    });
+  }, 600);
 
   /* ── 5. Smooth anchor scroll ── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -1976,4 +2000,12 @@
 
   /* ── 14. Scroll progress bar ── */
   const progress = document.createElement('div');
-  progress.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:var(--red);z-index:200;transition:width 0.1s linear;wid
+  progress.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:var(--red);z-index:200;transition:width 0.1s linear;width:0%;pointer-events:none;';
+  document.body.appendChild(progress);
+  window.addEventListener('scroll', () => {
+    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+    progress.style.width = pct + '%';
+  });
+</script>
+</body>
+</html>
